@@ -1,4 +1,4 @@
-# mars-task
+# mars-task/id25b1016/pasupuleti chaithanya sai
 The Automatic Night Lamp is a simple Arduino-based project that automatically turns ON the light in darkness and turns it OFF in daylight. It uses a light sensor to detect ambient light levels and control the lamp accordingly.
 
  Features
