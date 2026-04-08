@@ -1,0 +1,44 @@
+TINKER CAD LINK   https://www.tinkercad.com/things/by4XidoKjOZ-blinking-led
+code[10:16 pm, 08/04/2026] Pasupuleti Chaithanya Sai:
+unsigned long prev1 = 0;
+unsigned long prev2 = 0;
+unsigned long prev3 = 0;
+
+int led1 = 2;
+int led2 = 3;
+int led3 = 4;
+
+bool state1 = LOW;
+bool state2 = LOW;
+bool state3 = LOW;
+
+void setup() {
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  pinMode(led3, OUTPUT);
+}
+
+void loop() {
+  unsigned long current = millis();
+
+  // LED1 - 500ms
+  if (current - prev1 >= 500) {
+    prev1 = current;
+    state1 = !state1;
+    digitalWrite(led1, state1);
+  }
+
+  // LED2 - 1000ms
+  if (current - prev2 >= 1000) {
+    prev2 = current;
+    state2 = !state2;
+    digitalWrite(led2, state2);
+  }
+
+  // LED3 - 1500ms
+  if (current - prev3 >= 1500) {
+    prev3 = current;
+    state3 = !state3;
+    digitalWrite(led3, state3);
+  }
+}
