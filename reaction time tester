@@ -1,0 +1,37 @@
+task link  https://www.tinkercad.com/things/6isFVTngply-reaction-time-tester
+code
+ int led = 8;
+int button = 2;
+
+unsigned long startTime;
+unsigned long reactionTime;
+
+void setup() {
+  pinMode(led, OUTPUT);
+  pinMode(button, INPUT_PULLUP);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int waitTime = random(2000, 5000);
+  delay(waitTime);
+
+  digitalWrite(led, HIGH);
+  startTime = millis();
+
+  while (digitalRead(button) == HIGH) {
+    // wait for press
+  }
+
+  reactionTime = millis() - startTime;
+
+  digitalWrite(led, LOW);
+
+  Serial.print("Reaction Time: ");
+  Serial.print(reactionTime);
+  Serial.println(" ms");
+
+  delay(2000);
+}
+
+void setup() {
