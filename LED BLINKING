@@ -1,5 +1,5 @@
 TINKER CAD LINK   https://www.tinkercad.com/things/by4XidoKjOZ-blinking-led
-code[10:16 pm, 08/04/2026] Pasupuleti Chaithanya Sai:
+code
 unsigned long prev1 = 0;
 unsigned long prev2 = 0;
 unsigned long prev3 = 0;
