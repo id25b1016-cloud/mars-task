@@ -1,0 +1,32 @@
+task link https://www.tinkercad.com/things/aRd9O8yUJCM-rgb-and-potentiometer
+code
+ int pot = A0;
+int led = 6;
+
+int r = 9;
+int g = 10;
+int b = 11;
+
+void setup() {
+  pinMode(led, OUTPUT);
+  pinMode(r, OUTPUT);
+  pinMode(g, OUTPUT);
+  pinMode(b, OUTPUT);
+}
+
+void loop() {
+  int val = analogRead(pot);
+
+  // RGB color control
+  analogWrite(r, val / 4);
+  analogWrite(g, 255 - (val / 4));
+  analogWrite(b, (val / 2) % 255);
+
+  // LED blinking speed
+  int delayTime = map(val, 0, 1023, 100, 1000);
+
+  digitalWrite(led, HIGH);
+  delay(delayTime);
+  digitalWrite(led, LOW);
+  delay(delayTime);
+}
